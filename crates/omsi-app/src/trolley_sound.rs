@@ -148,7 +148,7 @@ impl TrolleySound {
             return;
         }
         // the hiss: a loop kept running, its level following the current and the speed
-        let level = g.rig.hiss;
+        let level = 0.0f32; // wire hiss disabled
         match self.hiss_voice {
             Some(id) if audio.is_playing(id) => {
                 audio.set_params(id, VoiceParams { gain: level * 0.5, pitch: 0.85 + 0.35 * level, looping: true, position: Some(tip), doppler: false, range: 10.0, lowpass_hz: 0.0, important: false });
